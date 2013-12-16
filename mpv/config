@@ -1,0 +1,3 @@
+[default]
+hwdec=vaapi
+vo=vaapi
