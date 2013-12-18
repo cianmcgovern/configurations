@@ -1,50 +1,12 @@
-BROWSER=firefox
-EDITOR=vim
-BATTERY=1
-SHELL=/bin/zsh
-
-# Aliases
-alias ll='ls -lh'
-alias paclean='sudo pacman -Rsn $(pacman -Qqdt) && sudo pacman -Sc && sudo pacman-optimize'
-alias myip="curl ifconfig.me"
-alias vi=vim
-alias irssi="irssi --hostname=unknown.i2p"
-alias rcopy="rsync -rltuv --progress"
-alias dateny="TZ=America/New_York date"
-alias datela="TZ=America/Los_Angeles date"
-alias tv="vlc --ffmpeg-hw http://tv/channels.m3u"
-alias pacsize="pacman -Qi | awk '/^Name/ {pkg=$3} /Size/ {print $4$5,pkg}' | sort -n"
-alias deephouse="mplayer -playlist http://listen.di.fm/public2/deeptech.pls"
-alias house="mplayer -playlist http://listen.di.fm/public2/house.pls"
-alias trance="mplayer -playlist http://listen.di.fm/public2/trance.pls"
-alias xpdf="xpdf -cont"
-alias eve="~/configs/eve"
-
-export PATH="$PATH:/opt/android-sdk/tools/:/opt/android-sdk/platform-tools/:/usr/share/java/apache-ant/bin/:/home/cian/bin/"
+export SHELL=/bin/zsh
 export EDITOR=/usr/bin/vim
-
-#export VDPAU_DRIVER=va_gl
-
-umask 027
 
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
-case $TERM in
-sun-cmd)
-precmd () { print -Pn "\e]l%~\e\\" }
-preexec () { print -Pn "\e]l%~\e\\" }
-;;
-*xterm*|rxvt|(dt|k|E)term)
-precmd () { print -Pn "\e]2;%n@%m:%~\a" }
-preexec () { print -Pn "\e]2;%n@%m:%~\a" }
-;;
-esac
-
-genpasswd() {
-        local l=$1
-        [ "$l" == "" ] && l=16
-        tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
-}
-
 setopt HIST_IGNORE_SPACE
+
+if [ -f /home/cian/.exp.local ];
+then
+    source /home/cian/.exp.local
+fi
