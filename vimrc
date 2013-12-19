@@ -86,3 +86,6 @@ set tags=./tags;/
 if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
+
+" associate Vagrantfile with ruby filetype
+au BufRead,BufNewFile Vagrantfile set filetype=ruby
