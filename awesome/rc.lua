@@ -576,7 +576,7 @@ wp_timer:start()
 
 os.execute( "setxkbmap ie" )
 -- os.execute( "setxkbmap -option ctrl:nocaps" )
-os.execute( "xmodmap ~/.Xmodmap" )
+os.execute( "xmodmap /home/cian/.Xmodmap" )
 
 APWTimer = timer({ timeout = 0.5 }) -- set update interval in s
 APWTimer:connect_signal("timeout", APW.Update)
