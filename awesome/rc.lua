@@ -88,8 +88,8 @@ local layouts =
  -- {{{ Tags
  -- Define a tag table which will hold all screen tags.
  tags = {
-   names  = { "www", "terminal", "etc" },
-   layout = { layouts[2], layouts[2], layouts[1],
+   names  = { "www", "steam", "etc" },
+   layout = { layouts[2], layouts[1], layouts[1],
  }}
  for s = 1, screen.count() do
      -- Each screen has its own tag table.
@@ -406,6 +406,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
+    { rule = { class = "Steam" },
+      properties = { floating = true, tag = tags[1][2] } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][1] } },
@@ -516,6 +518,7 @@ run_once("xscreensaver","-no-splash")
 run_once("pulseaudio","--start")
 run_once("firefox",nil,nil,1)
 run_once("urxvt",nil,nil,1)
+run_once("steam",nil,nil,2)
 run_once("nm-applet")
 run_once("dropboxd",nil,"dropbox")
 run_once("dropboxd",nil,"dropbox")
