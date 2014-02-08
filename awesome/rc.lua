@@ -88,8 +88,8 @@ local layouts =
  -- {{{ Tags
  -- Define a tag table which will hold all screen tags.
  tags = {
-   names  = { "www", "steam", "etc" },
-   layout = { layouts[2], layouts[1], layouts[1],
+   names  = { "www", "steam", "dev", "etc" },
+   layout = { layouts[2], layouts[1], layouts[2], layouts[1],
  }}
  for s = 1, screen.count() do
      -- Each screen has its own tag table.
@@ -315,6 +315,7 @@ globalkeys = awful.util.table.join(
 
     -- Screensaver lock
     awful.key({ modkey }, "F10", function() awful.util.spawn_with_shell("xscreensaver-command -lock") end),
+    awful.key({ modkey }, "F11", function() awful.util.spawn_with_shell("systemctl hibernate") end),
     -- Volume controls -> Tied to APW widget
     awful.key({ }, "XF86AudioRaiseVolume",  APW.Up),
     awful.key({ }, "XF86AudioLowerVolume",  APW.Down),
@@ -518,7 +519,6 @@ run_once("xscreensaver","-no-splash")
 run_once("pulseaudio","--start")
 run_once("firefox",nil,nil,1)
 run_once("urxvt",nil,nil,1)
-run_once("steam",nil,nil,2)
 run_once("nm-applet")
 run_once("dropboxd",nil,"dropbox")
 run_once("dropboxd",nil,"dropbox")
