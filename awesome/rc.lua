@@ -517,10 +517,7 @@ end
 
 run_once("xscreensaver","-no-splash")
 run_once("pulseaudio","--start")
-run_once("firefox",nil,nil,1)
-run_once("urxvt",nil,nil,1)
 run_once("nm-applet")
-run_once("dropboxd",nil,"dropbox")
 run_once("dropboxd",nil,"dropbox")
 run_once("thunar","--daemon")
 run_once("/usr/bin/mute_toggle")
