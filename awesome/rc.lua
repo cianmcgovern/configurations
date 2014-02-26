@@ -88,8 +88,8 @@ local layouts =
  -- {{{ Tags
  -- Define a tag table which will hold all screen tags.
  tags = {
-   names  = { "www", "steam", "dev", "etc" },
-   layout = { layouts[2], layouts[1], layouts[2], layouts[1],
+   names  = { "www", "email", "dev", "etc" },
+   layout = { layouts[2], layouts[6], layouts[2], layouts[1],
  }}
  for s = 1, screen.count() do
      -- Each screen has its own tag table.
