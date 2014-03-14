@@ -1,9 +1,36 @@
-call pathogen#infect()
-" let g:Powerline_symbols = 'fancy'
+set nocompatible
+filetype off
 
-syntax enable
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle, required
+Bundle 'gmarik/vundle'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/syntastic'
+Bundle 'JazzCore/ctrlp-cmatcher'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'rodjek/vim-puppet'
+
+" CtrlP stuffs
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+let g:ctrlp_working_path_mode = 'ra'
+
+" CTags
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 30
+map <F4> :TlistToggle<cr>
+map <F8> :!/usr/bin/ctags -R .<CR>
+set tags=./tags;/
+
+" YCM
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+
+" Theme
 set background=dark
-"let g:solarized_termcolors=256
 colorscheme solarized
 
 " Tab stuff
@@ -27,7 +54,7 @@ set ignorecase
 set smartcase
 set title
 set ttyfast
-" set spell
+set spell
 set wildmenu
 set wildmode=list:longest,full
 
@@ -37,7 +64,7 @@ set visualbell
 set t_vb=
 
 " Indentation and file detection
-set autoindent
+ set autoindent
 set smartindent
 filetype on
 filetype plugin on
@@ -52,39 +79,22 @@ cmap W w
 cmap WQ wq
 cmap wQ wq
 cmap Q q
-
 syntax on
+
 inoremap jj <Esc>
 highlight MatchParen ctermbg=4
 
-" Needed for pyflakes
 filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
 
-"for Syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
-
-" Mark trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
-" SuperTab
-""let g:SuperTabDefaultCompletionType = "context"
-
-" Previous files
 set hidden
-
-" CTags
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-let Tlist_WinWidth = 30
-map <F4> :TlistToggle<cr>
-map <F8> :!/usr/bin/ctags -R .<CR>
-set tags=./tags;/
 
 " Reload ~/.vimrc after ~/.vimrc saved
 if has("autocmd")
-    autocmd bufwritepost .vimrc source $MYVIMRC
+	autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
 " associate Vagrantfile with ruby filetype

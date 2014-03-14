@@ -1,8 +1,0 @@
-/home/cian/.vim/bundle/BoostParts/CMakeFiles/BoostParts.dir
-/home/cian/.vim/bundle/ycm/tests/CMakeFiles/copy_testdata.dir
-/home/cian/.vim/bundle/ycm/tests/gmock/CMakeFiles/gmock.dir
-/home/cian/.vim/bundle/ycm/tests/gmock/CMakeFiles/gmock_main.dir
-/home/cian/.vim/bundle/ycm/tests/gmock/gtest/CMakeFiles/gtest.dir
-/home/cian/.vim/bundle/ycm/tests/gmock/gtest/CMakeFiles/gtest_main.dir
-/home/cian/.vim/bundle/ycm/CMakeFiles/ycm_core.dir
-/home/cian/.vim/bundle/ycm/tests/CMakeFiles/ycm_core_tests.dir
