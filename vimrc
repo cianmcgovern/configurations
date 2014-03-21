@@ -13,6 +13,7 @@ Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rodjek/vim-puppet'
+Bundle 'godlygeek/tabular'
 
 " CtrlP stuffs
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
