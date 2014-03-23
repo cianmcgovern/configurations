@@ -89,7 +89,7 @@ local layouts =
  -- Define a tag table which will hold all screen tags.
  tags = {
    names  = { "www", "email", "dev", "etc" },
-   layout = { layouts[2], layouts[6], layouts[2], layouts[1],
+   layout = { layouts[2], layouts[7], layouts[2], layouts[1],
  }}
  for s = 1, screen.count() do
      -- Each screen has its own tag table.
@@ -146,6 +146,19 @@ batterywidgettimer:connect_signal("timeout",
       end
 )
 batterywidgettimer:start()
+
+-- Create temperature widget
+tempwidget = wibox.widget.textbox()
+tempwidget:set_text( " | Temp | " )
+tempwidgettimer = timer({ timeout = 5 })
+tempwidgettimer:connect_signal("timeout",
+    function()
+        fh = assert(io.popen("sensors coretemp-isa-0000 | grep Physical | gawk '{print $4}' | sed s/+//g", "r"))
+        tempwidget:set_text ( " | " .. fh:read("*l") )
+        fh:close()
+    end
+)
+tempwidgettimer:start()
 
 local APW = require("apw/widget")
 
@@ -228,6 +241,7 @@ for s = 1, screen.count() do
     --if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(APW)
     right_layout:add(wibox.widget.systray())
+    right_layout:add(tempwidget)
     right_layout:add(batterywidget)
     right_layout:add(cpuwidget)
     right_layout:add(separator)
@@ -322,7 +336,9 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioMute",         APW.ToggleMute),
     awful.key({ modkey }, "=",  APW.Up),
     awful.key({ modkey }, "-",  APW.Down),
-    awful.key({ modkey }, "m",         APW.ToggleMute)
+    awful.key({ modkey }, "m",         APW.ToggleMute),
+    awful.key({ }, "XF86MonBrightnessUp",  function() awful.util.spawn_with_shell("xbacklight -inc 10") end),
+    awful.key({ }, "XF86MonBrightnessDown",  function() awful.util.spawn_with_shell("xbacklight -dec 10") end)
 )
 
 clientkeys = awful.util.table.join(
@@ -410,8 +426,8 @@ awful.rules.rules = {
     { rule = { class = "Steam" },
       properties = { floating = true, tag = tags[1][2] } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-    { rule = { class = "Firefox" },
-      properties = { tag = tags[1][1] } },
+    --{ rule = { class = "Firefox" },
+    --  properties = { tag = tags[1][1] } },
 }
 -- }}}
 

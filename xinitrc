@@ -1,1 +1,1 @@
-exec awesome
+exec dbus-launch awesome
