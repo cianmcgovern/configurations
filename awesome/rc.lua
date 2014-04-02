@@ -89,7 +89,7 @@ local layouts =
  -- Define a tag table which will hold all screen tags.
  tags = {
    names  = { "www", "email", "dev", "etc" },
-   layout = { layouts[2], layouts[7], layouts[2], layouts[1],
+   layout = { layouts[2], layouts[2], layouts[2], layouts[1],
  }}
  for s = 1, screen.count() do
      -- Each screen has its own tag table.
@@ -423,8 +423,10 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    { rule = { class = "Steam" },
-      properties = { floating = true, tag = tags[1][2] } },
+      { rule = { class = "Pidgin", role = "buddy_list" },
+      properties = {floating = false, tag=tags[1][2]}, callback = awful.client.setslave },
+    { rule = { class = "Pidgin", role = "conversation" },
+      properties = { tag = tags[1][2] }, callback = awful.client.setslave }
     -- Set Firefox to always map on tags number 2 of screen 1.
     --{ rule = { class = "Firefox" },
     --  properties = { tag = tags[1][1] } },
@@ -533,11 +535,11 @@ end
 
 run_once("xscreensaver","-no-splash")
 run_once("pulseaudio","--start")
-run_once("nm-applet")
 run_once("dropboxd",nil,"dropbox")
 run_once("thunar","--daemon")
-run_once("/usr/bin/mute_toggle")
+run_once("/usr/bin/pulseaudio-ctl", "mute")
 run_once("redshift -l 54.039421:-7.834054 -t 6500:4500 -g 0.8 -m vidmode")
+run_once("pidgin")
 -- }}}
 
 -- {{{ Function definitions
