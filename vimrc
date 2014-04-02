@@ -14,6 +14,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
+Bundle 'steffanc/cscopemaps.vim'
 
 " CtrlP stuffs
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
@@ -100,3 +101,5 @@ endif
 
 " associate Vagrantfile with ruby filetype
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
+
+nmap <C-\>r :!find . -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.java" > cscope.files; cscope -b; ctags -R .<CR>
