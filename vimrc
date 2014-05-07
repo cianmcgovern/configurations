@@ -103,3 +103,5 @@ endif
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 nmap <C-\>r :!find . -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.java" > cscope.files; cscope -b; ctags -R .<CR>
+
+set backspace=2 " make backspace work like most other apps
