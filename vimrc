@@ -83,7 +83,6 @@ cmap wQ wq
 cmap Q q
 syntax on
 
-inoremap jj <Esc>
 highlight MatchParen ctermbg=4
 
 filetype on            " enables filetype detection
