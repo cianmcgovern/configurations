@@ -31,5 +31,6 @@
 
 [merge]
 	ff = false
+    tool = vimdiff
 [log]
 	date = local
