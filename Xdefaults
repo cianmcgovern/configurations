@@ -54,3 +54,7 @@ URxvt*color7:                #eee8d5
 URxvt*color15:               #fdf6e3
 
 URxvt.cursorBlink: 1
+
+!! Disable printing
+rxvt.print-pipe: "cat > /dev/null"
+urxvt.print-pipe: "cat > /dev/null"
