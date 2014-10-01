@@ -19,7 +19,6 @@ Plugin 'steffanc/cscopemaps.vim'
 call vundle#end()
 
 " CtrlP stuffs
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_working_path_mode = 'ra'
 
 " CTags
