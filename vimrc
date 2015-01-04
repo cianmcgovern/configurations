@@ -15,6 +15,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rodjek/vim-puppet'
 Plugin 'godlygeek/tabular'
 Plugin 'steffanc/cscopemaps.vim'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 
@@ -34,7 +35,8 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extr
 
 " Theme
 set background=dark
-colorscheme solarized
+"colorscheme solarized
+colorscheme base16-bright
 
 " Tab stuff
 set expandtab
