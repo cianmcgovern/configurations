@@ -30,7 +30,7 @@ import subprocess
 
 def get_brightness():
     brightness = subprocess.check_output( ["xbacklight", "-get"] )
-    return str(int(float(brightness.decode()))) + '%'
+    return "BRT " + str(int(float(brightness.decode()))) + '%'
 
 def print_line(message):
     """ Non-buffered printing to stdout. """
