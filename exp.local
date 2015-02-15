@@ -18,6 +18,7 @@ alias house="mplayer -playlist http://listen.di.fm/public2/house.pls"
 alias trance="mplayer -playlist http://listen.di.fm/public2/trance.pls"
 alias xpdf="xpdf -cont"
 alias eve="~/configs/eve"
+alias todo="vim ~/todo.txt"
 
 case $TERM in
 sun-cmd)
