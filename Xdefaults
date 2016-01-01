@@ -1,40 +1,40 @@
 !! Base16 Bright
 ! Scheme: Chris Kempson (http://chriskempson.com)
-#define base00 #000000
-#define base01 #303030
-#define base02 #505050
-#define base03 #b0b0b0
-#define base04 #d0d0d0
-#define base05 #e0e0e0
-#define base06 #f5f5f5
-#define base07 #ffffff
-#define base08 #fb0120
-#define base09 #fc6d24
-#define base0A #fda331
-#define base0B #a1c659
-#define base0C #76c7b7
-#define base0D #6fb3d2
-#define base0E #d381c3
-#define base0F #be643c
-URxvt*foreground: base05
-URxvt*background: base00
-URxvt*cursorColor: base05
-URxvt*color0: base00
-URxvt*color1: base08
-URxvt*color2: base0B
-URxvt*color3: base0A
-URxvt*color4: base0D
-URxvt*color5: base0E
-URxvt*color6: base0C
-URxvt*color7: base05
-URxvt*color8: base03
-URxvt*color9: base09
-URxvt*color10: base01
-URxvt*color11: base02
-URxvt*color12: base04
-URxvt*color13: base06
-URxvt*color14: base0F
-URxvt*color15: base07
+!#define #000000 #000000
+!#define #303030 #303030
+!#define #505050 #505050
+!#define #b0b0b0 #b0b0b0
+!#define #d0d0d0 #d0d0d0
+!#define #e0e0e0 #e0e0e0
+!#define #f5f5f5 #f5f5f5
+!#define #ffffff #ffffff
+!#define #fb0120 #fb0120
+!#define #fc6d24 #fc6d24
+!#define #fda331 #fda331
+!#define #a1c659 #a1c659
+!#define #76c7b7 #76c7b7
+!#define #6fb3d2 #6fb3d2
+!#define #d381c3 #d381c3
+!#define #be643c #be643c
+URxvt*foreground: #e0e0e0
+URxvt*background: #000000
+URxvt*cursorColor: #e0e0e0
+URxvt*color0: #000000
+URxvt*color1: #fb0120
+URxvt*color2: #a1c659
+URxvt*color3: #fda331
+URxvt*color4: #6fb3d2
+URxvt*color5: #d381c3
+URxvt*color6: #76c7b7
+URxvt*color7: #e0e0e0
+URxvt*color8: #b0b0b0
+URxvt*color9: #fc6d24
+URxvt*color10: #303030
+URxvt*color11: #505050
+URxvt*color12: #d0d0d0
+URxvt*color13: #f5f5f5
+URxvt*color14: #be643c
+URxvt*color15: #ffffff
 
 urxvt*termName: rxvt-256color
 URxvt.perl-ext-common:  default,clipboard,matcher

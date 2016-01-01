@@ -164,7 +164,7 @@ bindsym XF86ScreenSaver exec xscreensaver-command -lock
 # Switch to last workspace
 bindsym $mod+c workspace back_and_forth
 
-bindsym $mod+o exec xscreensaver-command -l
+bindsym $mod+o exec "xscreensaver-command -l; sleep 1; xset dpms force off"
 
 exec setxkbmap ie
 exec pulseaudio-ctl mute
@@ -173,5 +173,11 @@ exec "if [[ $(pgrep dropboxd) == '' ]]; then exec dropboxd; fi"
 exec "if [[ $(pgrep pulseaudio) == '' ]]; then exec pulseaudio --start; fi"
 exec "if [[ $(pgrep thunar) == '' ]]; then exec thunar --daemon; fi"
 exec "if [[ $(pgrep firefox) == '' ]]; then exec i3-msg 'workspace 1; exec firefox'; fi"
+exec "if [[ $(pgrep skype) == '' ]]; then exec skype; fi"
+exec "if [[ $(pgrep blueman-applet) == '' ]]; then exec blueman-applet; fi"
+exec --no-startup-id skype --version
 exec i3-msg 'workspace 2; exec urxvt -e /home/cian/configurations/tmux.sh'
-exec "if [[ $(pgrep thunderbird) == '' ]]; then exec i3-msg 'workspace 3; exec thunderbird'; fi"
+#exec "if [[ $(pgrep thunderbird) == '' ]]; then exec i3-msg 'workspace 3; exec thunderbird'; fi"
+
+for_window [class="Skype"] floating enable
+for_window [class="Pidgin"] floating enable

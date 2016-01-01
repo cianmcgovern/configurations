@@ -1,4 +1,3 @@
 [default]
-hwdec=vaapi
-vo=opengl-hq
+vo=opengl-hq,opengl
 af=drc
