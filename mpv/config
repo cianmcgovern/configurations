@@ -1,3 +1,4 @@
 [default]
 vo=opengl-hq,opengl
 af=drc
+hwdec=auto
